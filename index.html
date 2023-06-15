@@ -3,9 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Juros</title>
 </head>
 <body>
-    
+    <header>
+        <figure>
+            <img src="" alt="logo">
+        </figure>
+    </header>
+    <main>
+        <section id="calc">
+            <div id="text">
+                <h1>Calculadora de Juros Compostos</h1>
+                <p>Essa calculadora permite descobrir os juros compostos em cima do montante desejado.</p>
+                <p>Preencha os campos abaixo e clique em calcular para descobrir a resultado.</p>
+            </div>
+            <div id="calc-form">
+                <button id="mudar">composto</button>
+                <form action="" id="form">
+                    <div id="pai">
+                        <div id="left">
+                            <div id="up">
+                                <label for="inicial">valor inicial</label>
+                                <input type="text" name="inicial" required>
+                            </div>
+                            <div id="down">
+                                <label for="taxa">taxa de juros</label>
+                                <input type="text" name="taxa" required>
+                            </div>
+                        </div>
+                        <div id="right">
+                            <div id="up2">
+                                <label for="multa">multa</label>
+                                <input type="text" name="multa" id="multa">
+                            </div>
+                            <div id="down2">
+                                <label for="tempo">perído em</label>
+                                <input type="text" name="tempo" required>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit">calcular</button>
+                    <button type="reset" id="limp">limpar</button>
+                </form>
+            </div>
+            <div id="mostrar">
+                <div id="montante">
+                </div>
+                <div id="juros">
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
 </body>
 </html>
