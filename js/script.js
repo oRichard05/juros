@@ -29,7 +29,7 @@ function alterarS () {
 form.addEventListener('submit', (event) => {
     event.preventDefault()
     formD = new FormData(form)
-    capital = parseFloat(formD.get('inicial'))
+    capital = parseFloat(formD.get('capital'))
     taxa = parseFloat(formD.get('taxa')) / 100
     tempo = parseFloat(formD.get('tempo'))
     multa = parseFloat(formD.get('multa')) / 100
