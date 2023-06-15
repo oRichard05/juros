@@ -3,6 +3,10 @@ mont = document.getElementById('montante')
 jur = document.getElementById('juros')
 limpar = document.getElementById('limp')
 multar = document.getElementById('multa')
+
+taxaSelec = document.getElementById('op-taxa')
+tempSelec = document.getElementById('op-time')
+
 comp = true
 juros = 0
 montante = 0
@@ -32,6 +36,13 @@ form.addEventListener('submit', (event) => {
 
     if (multar.value == '') {
         multa = 0
+    }
+
+    if (taxaSelec.value == 'mensal' && tempSelec.value == 'anual') {
+        tempo = tempo / 12
+    }
+    else if (taxaSelec.value == 'anual' && tempSelec.value == 'mensal') {
+        taxa = taxa / 12
     }
 
     if (comp == false) {
