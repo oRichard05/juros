@@ -1,52 +1,83 @@
 :root{
     --principal: #01274D;
     --branco: white;
+    --preto: black;
 }
 
 *{
     margin: 0px;
     padding: 0px;
     text-decoration: none;
+    box-shadow: none;
+    transition: 0.5s;
+    font-family: 'Quicksand', sans-serif;
 }
 
 header{
     background-color: #01274D;
     font-family: 'Quicksand', sans-serif;
-    font-size: 30px;
+    font-size: 20px;
     text-align: center;
     color: white;
     padding: 15px;
 }
 
-body {  
-    background-image: url(../img/16311859_rm373batch13-082.jpg);
+
+main {
+  width: 100%;
+  height: calc(100vh - 80px);
+  background-image: url(../img/16311859_rm373batch13-082.jpg);
     background-size: cover;
-} 
+}
 
 #calc {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 80px);
 }
 
 .botao{
+    height: 60px;
     display: flex;
-    justify-content: center;
     padding: 8px;
     justify-content: space-around;
 }
 
-.botao button{
+.mudar{
+    /* height: 55px; */
     background-color: #01274D;
     color: white;
     border: 3px solid black;
     border-radius: 10px;
     padding: 10px;
-    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
 }
+
+.selected{
+  /* height: 55px; */
+  background-color: var(--branco);
+  color: var(--principal);
+  border: 3px solid var(--preto);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.selected:hover {
+  margin-top: 10px;
+}
+
+.mudar:hover {
+  margin-top: 10px;
+}
+
 #calc-form{
+    display: flex;
+    justify-content: center;
+    height: 300px;
+    width: 600px;
     background-color: var(--branco);
     padding: 50px ;
     border: 3px solid black;
@@ -56,11 +87,98 @@ body {
 #pai{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
+.lado {
+  display: grid;
+  grid-template-rows: 1fr 1fr ;
+  gap: 60px;
+}
+
+.op {
+  display: flex;
+  gap: 12px;
+}
+
+#buttons {
+  padding-top: 10px;
+  width: calc(100% - 15px);
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn-fim {
+  color: var(--branco);
+  background-color: var(--principal);
+  font-size: 20px;
+  padding: 13px 70px;
+  border-radius: 10px;
+}
+
+.btn-fim:hover {
+  background-color: var(--branco);
+  color: var(--principal);
+}
+
+.ops {
+  background-color: var(--principal);
+  color: var(--branco);
+  font-size: 13px;
+  border-radius: 7px;
+  padding: 7px;
+  padding-left: 10px;
+  
+}
+
+#mostrar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  height: 90px;
+  
+}
+
+.most {
+  border: 1px var(--principal) solid;
+  border-radius: 10px;
+  width: 250px;
+  height: 80px;
+}
+
+.txt-most {
+  padding-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.txt-most p {
+  font-size: 17px;
+}
+
+.preencher {
+  height: 35px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.preencher p {
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+/* inputs config-------------------------------------------------------- */
 .container {
     position: relative;
-    width: 200px;
+    width: 220px;
   }
   
   .container input {
@@ -69,6 +187,7 @@ body {
     outline: none;
     border: none;
     color: #222;
+    font-size: 20px;
     padding: 8px;
   }
   
@@ -81,12 +200,13 @@ body {
     pointer-events: none;
     transition: .5s;
     font-weight: bold;
+    font-size: 10;
   }
   
   .container input:valid ~ label,
   .container input:focus ~ label {
     color: rgb(10, 131, 212);
-    transform: translateY(-15px);
+    transform: translateY(-25px);
     font-size: .6rem;
   }
   
@@ -96,7 +216,7 @@ body {
     bottom: 0;
     width: 100%;
     height: 2px;
-    background: #222;
+    background: var(--principal);
   }
   
   .container i:before {
@@ -104,6 +224,6 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, #ff1b69, #ff0, #2196f3, #9c27b0, #ff1b69);
+    background: var(--principal);
     animation: animate 3s linear infinite;
   }

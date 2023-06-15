@@ -7,7 +7,11 @@ multar = document.getElementById('multa')
 taxaSelec = document.getElementById('op-taxa')
 tempSelec = document.getElementById('op-time')
 
-comp = true
+btn_composto = document.getElementById('composto')
+btn_simples = document.getElementById('simples')
+
+
+comp = false
 juros = 0
 montante = 0
 
@@ -18,13 +22,24 @@ limpar.addEventListener('click', () => {
 
 })
 
-function alterarC () {
+function alterar () {
     comp = true
+    btn_composto.classList.remove('mudar')
+    btn_composto.classList.add('selected')
+
+    btn_simples.classList.remove('selected')
+    btn_simples.classList.add('mudar')
 }
 
-function alterarS () {
+function alterarc () {
     comp = false
+    btn_composto.classList.remove('selected')
+    btn_composto.classList.add('mudar')
+
+    btn_simples.classList.remove('mudar')
+    btn_simples.classList.add('selected')
 }
+
  
 form.addEventListener('submit', (event) => {
     event.preventDefault()
@@ -59,15 +74,9 @@ form.addEventListener('submit', (event) => {
     console.log(juros)
     console.log(montante)
 
-    mont.innerHTML = `
-        <p>valor total final<p>
-        <p>R$${montante.toFixed(2)}<p>
-    `
+    mont.innerHTML = montante.toFixed(2)
 
-    jur.innerHTML = `
-        <p>total em juros<p>
-        <p>R$${juros.toFixed(2)}<p>
-    `
+    jur.innerHTML = juros.toFixed(2)
 
 
 })

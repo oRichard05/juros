@@ -11,8 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Juros</title>
 </head>
@@ -25,54 +25,77 @@
         <section id="calc">
             <div id="container2">
                 <div class="botao">
-                    <button calss="mudar" onclick="alterarC()">Juros compostos</button>
-                    <button class="mudar" onclick="alterarS()">Juros simples</button>
+                    <button class="mudar" id="composto" onclick="alterar()">Juros compostos</button>
+                    <button class="selected" id="simples" onclick="alterarc()">Juros simples</button>
                 </div>
                 <div id="calc-form">
                     <form action="" id="form">
                         <div id="pai">
-                            <div id="left">
-                                <div class="container">
-                                    <input type="text" required="required" name="capital">
-                                    <label for="capital">Capital</label>
-                                    <i></i>
-                                </div>
+                            <div class="lado">
                                 <div>
+                                    <div class="container">
+                                        <input type="text" required="required" name="capital">
+                                        <label for="capital">Capital</label>
+                                        <i></i>
+                                    </div>
+                                </div>
+                                <div class="op">
                                     <div class="container">
                                         <input type="text" required="required" name="taxa">
                                         <label for="taxa">taxa de juros</label>
                                         <i></i>
                                     </div>
-                                    <select name="taxa" id="op-taxa">
+                                    <select name="taxa" id="op-taxa" class="ops">
                                         <option value="mensal">Mensal</option>
                                         <option value="anual">Anual</option>
                                     </select>
                                 </div>
                             </div>
-                            <div id="right">
-                                <div id="up2">
-                                    <label for="multa">multa</label>
-                                    <input type="text" name="multa" id="multa">
+                            <div class="lado">
+                                <div>
+                                    <div class="container">
+                                        <input type="text" name="multa" id="multa" required="required" >
+                                        <label for="multa">Multa</label>
+                                        <i></i>
+                                    </div>
                                 </div>
-                                <div id="down2">
-                                    <label for="tempo">perído em</label>
-                                    <input type="text" name="tempo" required>
-                                    <select name="tempo" id="op-time">
+                                <div class="op">
+                                    <div class="container">
+                                        <input type="text" required="required" name="tempo">
+                                        <label for="tempo">Período</label>
+                                        <i></i>
+                                    </div>
+                                    <select name="tempo" id="op-time" class="ops">
                                         <option value="mensal">Mensal</option>
                                         <option value="anual">Anual</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
-                        <button type="submit">calcular</button>
-                        <button type="reset" id="limp">limpar</button>
+                        <div id="buttons">
+                            <button type="submit" class="btn-fim" >calcular</button>
+                            <button type="reset" id="limp" class="btn-fim" >limpar</button>
+                        </div>
+                        <div id="mostrar">
+                            <div id="montanteA" class="most">
+                                <div class="txt-most">
+                                    <p>Valor final total</p>
+                                </div>
+                                <div class="preencher"> 
+                                    <p>R$ <span id="montante"></span></p>
+                                </div>
+                            </div>
+                            <div id="jurosA" class="most">
+                                <div class="txt-most">
+                                    <p>Total em juros</p>
+                                </div>
+                                <div class="preencher"> 
+                                    <p>R$ <span id="juros"></span></p>
+                                </div>
+                            </div>
+                        </div>
                     </form>
                 </div>
-                <div id="mostrar">
-                    <div id="montante">
-                    </div>
-                    <div id="juros">
-                    </div>
                 </div>
             </div>
         </section>
