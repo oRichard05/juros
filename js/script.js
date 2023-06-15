@@ -1,5 +1,4 @@
 form = document.getElementById('form')
-calc = document.getElementById('mudar')
 mont = document.getElementById('montante')
 jur = document.getElementById('juros')
 limpar = document.getElementById('limp')
@@ -15,16 +14,13 @@ limpar.addEventListener('click', () => {
 
 })
 
-calc.addEventListener('click', () => {
-    if (comp == false) {
-        comp = true
-        calc.innerHTML = 'composto'
-    }else {
-        calc.innerHTML = 'simples'
-        comp = false
-    }
+function alterarC () {
+    comp = true
+}
 
-})
+function alterarS () {
+    comp = false
+}
  
 form.addEventListener('submit', (event) => {
     event.preventDefault()
@@ -51,12 +47,15 @@ form.addEventListener('submit', (event) => {
 
     console.log(juros)
     console.log(montante)
-    jur.innerHTML = `
-        <p>${juros.toFixed(2)}<p>
-    `
-        
+
     mont.innerHTML = `
-        <p>${montante.toFixed(2)}<p>
+        <p>valor total final<p>
+        <p>R$${montante.toFixed(2)}<p>
+    `
+
+    jur.innerHTML = `
+        <p>total em juros<p>
+        <p>R$${juros.toFixed(2)}<p>
     `
 
 
