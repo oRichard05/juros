@@ -1,0 +1,24 @@
+:root{
+    --principal: #01274D;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+}
+
+header{
+    background-color: #01274D;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    padding: 15px;
+}
+
+body {  
+    background-image: url(../img/16311859_rm373batch13-082.jpg);
+    background-size: cover;
+
+}   
